@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecommerce-deployment
+  labels:
+    app: ecommerce
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: ecommerce
+
+  template:
+    metadata:
+      labels:
+        app: ecommerce
+
+    spec:
+      containers:
+      - name: ecommerce-container
+        image: yourdockerhub/ecommerce-app:v1
+
+        ports:
+        - containerPort: 5000
+
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+
+          limits:
+            memory: "256Mi"
+            cpu: "200m"

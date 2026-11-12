@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smart E-Commerce</title>
+</head>
+<body>
+
+<h2>Products</h2>
+
+<ul>
+{% for product in products %}
+<li>{{ product.name }}</li>
+{% endfor %}
+</ul>
+
+<h2>Recommended For You</h2>
+
+<ul>
+{% for item in recommendations %}
+<li>{{ item.name }}</li>
+{% endfor %}
+</ul>
+
+</body>
+</html>
